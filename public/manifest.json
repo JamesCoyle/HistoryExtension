@@ -1,34 +1,34 @@
 {
 	"manifest_version": 3,
-	"name": "Download Manager",
-	"short_name": "Downloads",
-	"version": "3.1.1",
+	"name": "History Viewer",
+	"short_name": "History",
+	"version": "0.1",
 	"author": "James Coyle",
-	"description": "A less intrusive way to access your recent downloads",
+	"description": "Easy access to your current browser session's history",
 	"icons": {
-		"128": "images/download128.png",
-		"16": "images/download16.png",
-		"32": "images/download32.png",
-		"48": "images/download48.png",
-		"64": "images/download64.png"
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png",
+		"48": "images/icon-48.png",
+		"64": "images/icon-64.png",
+		"128": "images/icon-128.png"
 	},
 	"permissions": [
-		"downloads",
-		"downloads.open",
-		"downloads.shelf",
+		"history",
 		"storage"
-	],
-	"optional_permissions": [
-		"notifications"
 	],
 	"action": {
 		"default_popup": "index.html",
-		"default_title": "Downloads",
-		"default_icon": {
-			"16": "icons/icon-16.png",
-			"24": "icons/icon-24.png",
-			"32": "icons/icon-32.png",
-			"48": "icons/icon-48.png"
+		"default_title": "History"
+	},
+	"options_page": "options.html",
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"windows": "Alt+H",
+				"mac": "Alt+H",
+				"chromeos": "Alt+H",
+				"linux": "Alt+H"
+			}
 		}
 	},
 	"background": {
