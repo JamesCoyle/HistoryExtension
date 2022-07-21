@@ -1,10 +1,11 @@
 <script>
 	import { theme, iconColor, defaultIconColor, showShelf, notify } from './stores/settings'
 
+	import Icon from './components/icon.svelte'
 	import IconButton from './components/icon-button.svelte'
 
-	import { mdiRestore } from '@mdi/js'
-	import { icoKofi } from './custom-icons'
+	import { mdiAlertOutline, mdiCodeBraces, mdiRestore } from '@mdi/js'
+	import { icoGithub } from './custom-icons'
 
 	function updateIconColor(e) {
 		$iconColor = e.target.value
@@ -40,6 +41,7 @@
 
 	.setting-item {
 		padding: var(--pad, var(--pad-default));
+		color: var(--text-color);
 		background-color: var(--hover-color);
 		border-radius: 0.25rem;
 	}
@@ -96,10 +98,14 @@
 <main class="row">
 	<article class="col">
 		<h1>History Viewer</h1>
-		<p>Easy access to your current browser session's history.</p>
-		<p>Developed by <a href="https://james-coyle.dev/">James Coyle</a></p>
+		<p style="font-size: 1.5rem">Easy access to your current browser session's history.</p>
+
+		<a href="https://ko-fi.com/J3J83XUWP" target="_blank">
+			<img class="light-only" height="48" style="border:0px;height:48px;" src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com" />
+			<img class="dark-only" height="48" style="border:0px;height:48px;" src="https://cdn.ko-fi.com/cdn/kofi5.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com" />
+		</a>
 	</article>
-	<article class="settings col">
+	<article class="settings col" style="--gap: 4rem">
 		<h1 class="sr-only">Settings</h1>
 		<section class="setting-group">
 			<h2>Appearance</h2>
@@ -131,6 +137,14 @@
 					<input type="color" id="setting-icon-color" value={$iconColor !== 'auto' ? $iconColor : $defaultIconColor} on:change={updateIconColor} />
 				</div>
 			</div>
+		</section>
+
+		<section class="setting-group">
+			<h2>Links</h2>
+
+			<a class="setting-item row" href="https://james-coyle.com/"><Icon path={mdiCodeBraces} /><span>Developed by James Coyle</span></a>
+			<a class="setting-item row" href="https://github.com/JamesCoyle/HistoryExtension"><Icon path={icoGithub} />View source on GitHub</a>
+			<a class="setting-item row" href="https://github.com/JamesCoyle/HistoryExtension/issues/new"><Icon path={mdiAlertOutline} />Report an issue</a>
 		</section>
 	</article>
 </main>

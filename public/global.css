@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'WorkSans';
+	src: url('fonts/WorkSans.ttf');
+}
+
 .theme-light {
 	--text-color: #292a2d;
 	--background-color: rgb(255, 255, 255);
@@ -14,6 +19,22 @@
 	color-scheme: dark;
 }
 
+.theme-light .dark-only {
+	display: none;
+}
+
+.theme-light .light-only {
+	display: revert;
+}
+
+.theme-dark .light-only {
+	display: none;
+}
+
+.theme-dark .dark-only {
+	display: revert;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		--text-color: #292a2d;
@@ -21,6 +42,10 @@
 		--hover-color: hsla(0, 0%, 0%, 0.15);
 
 		color-scheme: light;
+	}
+
+	.dark-only {
+		display: none;
 	}
 }
 
@@ -31,6 +56,10 @@
 		--hover-color: hsla(0, 0%, 100%, 0.15);
 
 		color-scheme: dark;
+	}
+
+	.light-only {
+		display: none;
 	}
 }
 
@@ -54,6 +83,8 @@ body {
 body {
 	display: flex;
 	flex-flow: column nowrap;
+	font-size: 1rem;
+	font-family: 'WorkSans', 'Roboto', Tahoma, sans-serif;
 }
 
 svg {
@@ -116,7 +147,7 @@ input[type='color']::-webkit-color-swatch-wrapper {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 4rem;
 	font-weight: lighter;
 }
 
@@ -124,6 +155,7 @@ h2 {
 	/*margin: 1rem 1rem 0.75rem 1rem;*/
 	font-size: 1.5rem;
 	font-weight: normal;
+	text-align: center;
 }
 
 a {
