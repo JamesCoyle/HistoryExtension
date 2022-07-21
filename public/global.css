@@ -3,6 +3,11 @@
 	src: url('fonts/WorkSans.ttf');
 }
 
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins/Regular.woff2');
+}
+
 .theme-light {
 	--text-color: #292a2d;
 	--background-color: rgb(255, 255, 255);
@@ -84,7 +89,7 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	font-size: 1rem;
-	font-family: 'WorkSans', 'Roboto', Tahoma, sans-serif;
+	font-family: 'Poppins', 'Roboto', Tahoma, sans-serif;
 }
 
 svg {
