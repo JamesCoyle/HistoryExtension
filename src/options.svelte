@@ -136,9 +136,9 @@
 		<section class="setting-group col align-items-center">
 			<h2>Links</h2>
 
-			<a class="setting-item row align-items-center" href="https://james-coyle.com/"><Icon path={mdiCodeBraces} /><span>Developed by James Coyle</span></a>
-			<a class="setting-item row align-items-center" href="https://github.com/JamesCoyle/HistoryExtension"><Icon path={icoGithub} />View source on GitHub</a>
-			<a class="setting-item row align-items-center" href="https://github.com/JamesCoyle/HistoryExtension/issues/new"><Icon path={mdiAlertOutline} />Report an issue</a>
+			<a class="setting-item row align-items-center" target="_blank" href="https://james-coyle.com/"><Icon path={mdiCodeBraces} /><span>Developed by James Coyle</span></a>
+			<a class="setting-item row align-items-center" target="_blank" href="https://github.com/JamesCoyle/HistoryExtension"><Icon path={icoGithub} />View source on GitHub</a>
+			<a class="setting-item row align-items-center" target="_blank" href="https://github.com/JamesCoyle/HistoryExtension/issues/new"><Icon path={mdiAlertOutline} />Report an issue</a>
 		</section>
 	</div>
 </main>
