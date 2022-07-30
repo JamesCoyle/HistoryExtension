@@ -177,35 +177,29 @@ a {
 .row {
 	--gap: var(--gap-default);
 
-	display: grid;
-	grid-template-rows: 1fr;
-	grid-auto-columns: auto;
-	grid-auto-flow: column;
-	justify-content: space-between;
-	align-items: center;
-
-	gap: var(--gap);
-}
-
-.row.equal {
-	grid-auto-columns: 1fr;
-}
-
-.col {
-	--gap: var(--gap-default);
-
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-auto-rows: auto;
-	justify-content: space-between;
-	align-items: center;
+	display: flex;
+	flex-flow: row nowrap;
 	width: 100%;
 
 	gap: var(--gap);
 }
 
-.col.equal {
-	grid-auto-rows: 1fr;
+.col {
+	--gap: var(--gap-default);
+
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+
+	gap: var(--gap);
+}
+
+.flex-auto {
+	flex: 1 1 auto;
+}
+
+.align-items-center {
+	align-items: center;
 }
 
 .pad {

@@ -33,7 +33,7 @@
 	}
 </style>
 
-<main class={$theme}>
+<main class="theme-{$theme}">
 	<SearchHeader bind:query />
 
 	<div class="scrollable">
