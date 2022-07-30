@@ -92,18 +92,18 @@
 </style>
 
 <main class="theme-{$theme}">
-	<div class="col">
+	<div class="col pad" style="--gap: 2rem">
 		<h1>History Viewer</h1>
-		<p style="font-size: 1.5rem">Easy access to your current browser session's history.</p>
+		<p class="fs2">Easy access to your current browser session's history.</p>
 
-		<a href="https://ko-fi.com/J3J83XUWP" target="_blank">
+		<a href="https://ko-fi.com/J3J83XUWP" target="_blank" style="margin-block: 1rem;">
 			<img class="light-only" height="48" style="border:0px;height:48px;" src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com" />
 			<img class="dark-only" height="48" style="border:0px;height:48px;" src="https://cdn.ko-fi.com/cdn/kofi5.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com" />
 		</a>
 	</div>
-	<div class="settings col flex-auto" style="--gap: 4rem">
+	<div class="settings col pad" style="--gap: 4rem">
 		<h1 class="sr-only">Settings</h1>
-		<section class="setting-group col">
+		<section class="setting-group col align-items-center">
 			<h2>Appearance</h2>
 
 			<div class="setting-item col">
@@ -133,7 +133,7 @@
 			</div>
 		</section>
 
-		<section class="setting-group col">
+		<section class="setting-group col align-items-center">
 			<h2>Links</h2>
 
 			<a class="setting-item row align-items-center" href="https://james-coyle.com/"><Icon path={mdiCodeBraces} /><span>Developed by James Coyle</span></a>

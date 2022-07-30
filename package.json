@@ -1,6 +1,8 @@
 {
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"dev": "rollup -c -w",
+		"install": "pnpm install"
 	},
 	"prettier": "@jamescoyle/prettier-config",
 	"dependencies": {

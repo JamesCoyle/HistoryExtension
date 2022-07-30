@@ -88,6 +88,7 @@ body {
 body {
 	display: flex;
 	flex-flow: column nowrap;
+	min-width: 26rem;
 	font-size: 1rem;
 	font-family: 'Poppins', 'Roboto', Tahoma, sans-serif;
 }
@@ -151,16 +152,16 @@ input[type='color']::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 
-h1 {
-	font-size: 4rem;
+h1,
+.fs1 {
+	font-size: clamp(2rem, 1.1429rem + 3.8095vw, 4rem);
 	font-weight: lighter;
 }
 
-h2 {
-	/*margin: 1rem 1rem 0.75rem 1rem;*/
-	font-size: 1.5rem;
+h2,
+.fs2 {
+	font-size: clamp(1rem, 0.7857rem + 0.9524vw, 1.5rem);
 	font-weight: normal;
-	text-align: center;
 }
 
 a {
