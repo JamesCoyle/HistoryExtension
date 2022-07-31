@@ -18,10 +18,9 @@ jobs:
         with:
           node-version: 16
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.x.x
-          run_install: true
+        run: |
+          npm i -g pnpm@5
+          pnpm i --frozen-lockfile
       - name: Build          
         run: pnpm run build
 
