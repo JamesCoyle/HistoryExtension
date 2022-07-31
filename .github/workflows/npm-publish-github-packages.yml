@@ -19,7 +19,7 @@ jobs:
           node-version: 16
       - name: Install pnpm
         run: |
-          npm i -g pnpm@5
+          npm i -g pnpm
           pnpm i --frozen-lockfile
       - name: Build          
         run: pnpm run build
