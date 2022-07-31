@@ -12,14 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 6.0.2
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      - run: pnpm install
+      - run: pnpm run build
 
   publish-gpr:
     needs: build
@@ -28,12 +26,13 @@ jobs:
       contents: read
       packages: write
     steps:
+      - uses: pnpm/action-setup@v2.2.2
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
       - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
