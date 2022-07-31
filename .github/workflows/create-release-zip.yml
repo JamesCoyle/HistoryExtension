@@ -1,7 +1,4 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
-
-name: Node.js Package
+name: Create Release Package
 
 on:
   release:
@@ -15,16 +12,28 @@ jobs:
       - uses: pnpm/action-setup@v2.2.2
         with:
           version: 7
+          
       - name: Install node
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          
       - name: Install dependencies
         run: pnpm install
+        
+      - name: Update my-file.json description
+        uses: jossef/action-set-json-field@v2
+        with:
+          file: public/manifest.json
+          field: version
+          value: ${GITHUB_REF/refs\/tags\//}
+          
       - name: Build          
         run: pnpm run build
+        
       - name: Zip
         run: zip -r -j Release.zip public
+        
       - name: Upload
         uses: djn24/add-asset-to-release@v1
         with:
