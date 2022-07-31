@@ -1,0 +1,48 @@
+name: Create Release Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  zip: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Get tag version
+        uses: olegtarasov/get-tag@v2.1
+        id: tagName
+      
+      - name: Update manifest version
+        uses: shaneapowell/github-tweak-the-json@v1
+        with: 
+          action: write
+          filename: public/manifest.json
+          field: version
+          value: ${{ steps.tagName.outputs.tag }}
+          
+      - name: Build          
+        run: pnpm run build
+        
+      - name: Zip
+        run: zip -r -j Release.zip public
+        
+      - name: Upload
+        uses: djn24/add-asset-to-release@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'Release.zip'
+
+ 
