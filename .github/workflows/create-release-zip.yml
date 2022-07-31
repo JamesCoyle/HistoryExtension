@@ -22,11 +22,12 @@ jobs:
         run: pnpm install
         
       - name: Update my-file.json description
-        uses: jossef/action-set-json-field@v2
-        with:
-          file: public/manifest.json
+        uses: shaneapowell/github-tweak-the-json@v1
+        with: 
+          action: write
+          filename: public/manifest.json
           field: version
-          value: ${GITHUB_REF/refs\/tags\//}
+          value: ${GITHUB_REF#refs/tags/}
           
       - name: Build          
         run: pnpm run build
