@@ -25,5 +25,10 @@ jobs:
         run: pnpm run build
       - name: Zip
         run: zip -r Release.zip public
+      - name: Upload
+        uses: djn24/add-asset-to-release@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'Release.zip'
 
  
