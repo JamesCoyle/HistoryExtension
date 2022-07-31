@@ -21,13 +21,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         
-      - name: Update my-file.json description
+      - name: Get tag version
+        uses: olegtarasov/get-tag@v2.1
+        id: tagName
+      
+      - name: Update manifest version
         uses: shaneapowell/github-tweak-the-json@v1
         with: 
           action: write
           filename: public/manifest.json
           field: version
-          value: ${GITHUB_REF#refs/tags/}
+          value: ${{ steps.tagName.outputs.tag }}
           
       - name: Build          
         run: pnpm run build
