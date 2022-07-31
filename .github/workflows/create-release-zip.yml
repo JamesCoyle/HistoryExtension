@@ -24,7 +24,7 @@ jobs:
       - name: Build          
         run: pnpm run build
       - name: Zip
-        run: zip -r Release.zip public
+        run: zip -r -m Release.zip public
       - name: Upload
         uses: djn24/add-asset-to-release@v1
         with:
