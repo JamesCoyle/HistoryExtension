@@ -40,5 +40,5 @@
 	</svg>
 	<!-- svelte-ignore a11y-autofocus -->
 	<input type="search" placeholder="Search history" autofocus bind:value={query} />
-	<IconButton icon={mdiCog} action={openOptionsPage} />
+	<IconButton description="Open options page" icon={mdiCog} action={openOptionsPage} />
 </header>
