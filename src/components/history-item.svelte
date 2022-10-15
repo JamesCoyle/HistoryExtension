@@ -1,10 +1,14 @@
 <script>
 	export let item
 
-	// todo : replace this with chrome.favicon api once available - https://bugs.chromium.org/p/chromium/issues/detail?id=104102
-	let iconUrl = new URL('https://www.google.com/s2/favicons')
-	iconUrl.searchParams.append('domain', item.url)
-	iconUrl.searchParams.append('sz', 16)
+	$: iconUrl = getFaviconUrl(item.url)
+
+	function getFaviconUrl(url) {
+		let faviconUrl = new URL(`chrome-extension://${chrome.runtime.id}/_favicon/`)
+		faviconUrl.searchParams.append('pageUrl', url)
+		faviconUrl.searchParams.append('size', '16')
+		return faviconUrl.href
+	}
 
 	function openInNewTab() {
 		chrome.tabs.create({ url: item.url })
@@ -49,7 +53,7 @@
 </style>
 
 <button class="item" title={item.title} on:click={openInNewTab}>
-	<img class="icon" src={iconUrl.href} alt="" />
+	<img class="icon" src={iconUrl} alt="" />
 	<div class="info">
 		<span class="title">{item.title}</span>
 		<span class="url">{item.url}</span>
