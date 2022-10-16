@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "History Viewer",
-	"version": "0",
+	"version": "0.1",
 	"short_name": "History",
 	"author": "James Coyle",
 	"description": "Easy access to your current browser session's history",
