@@ -3,6 +3,7 @@
 
 	import { mdiCog, mdiMagnify } from '@mdi/js'
 
+	export let placeholder = "Search"
 	export let query = ''
 
 	function openOptionsPage() {
@@ -39,6 +40,6 @@
 		<path d={mdiMagnify} />
 	</svg>
 	<!-- svelte-ignore a11y-autofocus -->
-	<input type="search" placeholder="Search history" autofocus bind:value={query} />
+	<input type="search" {placeholder} autofocus bind:value={query} />
 	<IconButton description="Open options page" icon={mdiCog} action={openOptionsPage} />
 </header>
