@@ -7,17 +7,13 @@ function subscribe(store, key, value) {
 	})
 }
 
-export const showShelf = writable(false)
 export const theme = writable('auto')
 export const iconColor = writable('#3369d7')
 export const defaultIconColor = writable('#3369d7')
-export const notify = writable({ onStart: false, onPause: false, onError: false, onComplete: false })
 
 // Populate stores with values from chrome storage
-chrome.storage.sync.get(['theme', 'iconColor', 'defaultIconColor', 'showShelf', 'notify']).then((items) => {
-	subscribe(showShelf, 'showShelf', items.showShelf)
+chrome.storage.sync.get(['theme', 'iconColor', 'defaultIconColor']).then((items) => {
 	subscribe(theme, 'theme', items.theme)
 	subscribe(iconColor, 'iconColor', items.iconColor)
 	subscribe(defaultIconColor, 'defaultIconColor', items.defaultIconColor)
-	subscribe(notify, 'notify', items.notify)
 })
