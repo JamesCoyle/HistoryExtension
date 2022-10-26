@@ -73,16 +73,12 @@
 	--gap-default: 1rem;
 
 	--theme-color: hsl(202, 81%, 48%);
+	--spacing: 10vw;
 
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	user-select: none;
-}
-
-html,
-body {
-	overflow: hidden;
 }
 
 body {
@@ -154,6 +150,7 @@ input[type='color']::-webkit-color-swatch-wrapper {
 
 h1,
 .fs1 {
+	margin-block-start: var(--spacing);
 	font-size: clamp(2rem, 1.1429rem + 3.8095vw, 4rem);
 	font-weight: lighter;
 }
@@ -201,6 +198,10 @@ a {
 
 .align-items-center {
 	align-items: center;
+}
+
+.justify-content-center {
+	justify-content: center;
 }
 
 .pad {

@@ -16,22 +16,27 @@
 	main {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		place-items: center;
-		gap: 10vw;
-
-		padding: 10vw;
+		justify-items: center;
+		gap: var(--spacing);
+		padding: var(--spacing);
 	}
 
-	@media screen and (max-width: 75rem) {
+	@media screen and (max-width: 60rem) {
 		main {
 			display: flex;
 			flex-flow: column nowrap;
 			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.info {
+			text-align: center;
 		}
 	}
 
 	.settings {
-		width: 24rem;
+		min-width: 24rem;
+		max-width: 30rem;
 		flex: 0 0 24rem;
 	}
 
@@ -92,7 +97,7 @@
 </style>
 
 <main class="theme-{$theme}">
-	<div class="col pad" style="--gap: 2rem">
+	<div class="info col pad" style="--gap: 2rem">
 		<h1>History Viewer</h1>
 		<p class="fs2">Easy access to your current browser session's history.</p>
 
